@@ -2,6 +2,7 @@ import React from 'react';
 
 const Sort = () => {
 	const [open, setOpen] = React.useState(false);
+	const list = ['популярности', 'цене', 'алфавиту'];
 
 	const toggleOpen = () => {
 		setOpen(!open);
@@ -28,9 +29,9 @@ const Sort = () => {
 			{open && (
 				<div className='sort__popup'>
 					<ul>
-						<li className='active'>популярности</li>
-						<li>цене</li>
-						<li>алфавиту</li>
+						{list.map((item, index) => (
+							<li key={index}>{item}</li>
+						))}
 					</ul>
 				</div>
 			)}
